@@ -1,0 +1,41 @@
+# gnc-chain screen S7 (launch 44 s, horizon 10, long_horizon 14 via reach_kwargs, depth 2); otherwise identical to m2fb_sc40.yaml
+# M2FB on scenario 40: research/sc4/cfg/r8_bst.yaml (= cfg_plan_m2fb_sc4.yaml on quals-fast) with scenario_number 40,
+# plus GivenSim on the wind predictor's profile from 30 m to the highest balloon, held constant outside (issue #4).
+scenario_number: 40
+render_mode: null
+agent_module_path: "./training/datagen_agent/agents/planner_agent.py"
+agent_class_name: "PlannerAgent"
+agent_name: "M2FB sc40 L44_h10_d2"
+agent_kwargs:
+  replan_dt: 0.1
+  variants:
+    - [2.0, 0.8, 0.0, 0.0, 0.0]
+    - [3.0, 0.3, 0.0, 0.0, 0.0]
+    - [4.0, 0.3, 0.0, 0.0, 0.0]
+    - [3.0, 0.3, 5.0, 0.0, 0.0]
+    - [3.0, 0.3, 0.0, 1.5, 0.0]
+    - [3.0, 0.3, 0.0, -1.5, 0.0]
+    - [3.0, 0.3, 0.0, 0.0, 1.5]
+    - [3.0, 0.3, 0.0, 0.0, -1.5]
+    - [3.0, 0.3, 10.0, 0.0, 0.0]
+    - [3.0, 0.3, 20.0, 0.0, 0.0]
+  launch_t: 44.0
+  horizon: 10.0
+  rocketnav: mekf
+  depth: 2
+  depth_gamma: 0.6
+  predictor: true
+  pred_sim_wind: true
+  pred_sim_wind_zlo: 30.0
+  vi_variants: true
+  vi_wr: 3.0
+  beam: 16
+  branch: 12
+  lam: 0.15
+  critic_path: critic_g0_s7_it549.npz
+  critic_beta: 0.6
+  loop_kwargs: {kp_rate: 10.0, ff: true}
+  reach_kwargs: {reach_beta: 0.5, reach_mode: soft, reach_k: 3, reach_tau0: 2.0, long_horizon: 14.0}
+team_name: "TASTI_ultimate_crusher"
+team_secret: "TBD"
+leaderboard_submission: false

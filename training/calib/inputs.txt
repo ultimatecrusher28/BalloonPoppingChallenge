@@ -1,0 +1,22 @@
+# finale-calib inputs, 2026-11-08 01:11, calib.py from a42d0112 run with /mnt/data/chwang/BalloonPoppingChallenge-wt/finale-submission/.venv/bin/python (-I)
+# columns: role | path | sha256 | size bytes
+SCRIPT | training/calib/calib.py | ac952714e69f2ea70121e7672ad4a629635f78dfa0e038561add5dbf8d82ff12 | 13042
+ROWS | /mnt/data/chwang/tmp/two_coast/out/t24_rows.csv | efebf4c609f2aa45c22b7abc379383a313549e9d0eb7b6d53014f3251d2d3dd7 | 126816
+T24_DIR | /mnt/data/chwang/tmp/two_coast/out/t24 | manifest sha256 23e2c035a28f312b008193034733015e6dc1a88eb90165d2e1b57a04678e7d51 (315 files, 2711581 bytes; per-file list in t24_manifest.sha256)
+VIEW | /mnt/data/chwang/BalloonPoppingChallenge-wt/tourlate4-screen-64/research/sc40/coast_night/out/all64 | manifest sha256 5d38cdc8fed2ad05e233a7c9bae2edbf7e31bd23c528266e0e102b04b487f4c0 (parent/ + ctrl_T24/, 128 files resolved through symlinks, 1008577 bytes; per-file list in view_manifest.sha256)
+TL4_JSON | /mnt/data/chwang/BalloonPoppingChallenge-wt/tour-lock-own-coast-gate/research/sc40/coast_night/report/tl4_64/tl4_all64.json | 616f26b7ffca10ef2c34c4a813690c338d83ed5f11fdf1649f0596fa19b3088c | 11721
+HIND | /mnt/data/chwang/BalloonPoppingChallenge/.agents/hindsight_solutions_ls12.json | 6f965d45a9521e20fd9323ce3a57bc2c782656919a265eef6b26e1df3daa288a | 95335
+PROXY_JSON | /mnt/data/chwang/BalloonPoppingChallenge-wt/tour-lock-own-coast-gate/research/sc40/coast_night/report/gate/proxy64.json | bf9e4b4acf40851e716d513dda9dc3bddca029102b920a104a890823ff463f5b | 208901
+# outputs
+OUT_MD | training/calib/calib24_reference.md (this re-run) | a6d86e77d4b875204a4468b52c36e49346c8787d2d7aceaabb78188f7859a8c8 | 12002
+OUT_JSON | /mnt/data/chwang/tmp/finale-calib/calib24.json | 4fcebd235b520a1715d0db8250c149eabab9762fb007899012a21af898e097e5 | 30352
+COMMIT_MD | /mnt/data/chwang/tmp/finale-calib/commit_calib24.md | a6d86e77d4b875204a4468b52c36e49346c8787d2d7aceaabb78188f7859a8c8 | 12002
+COMMIT_JSON | /mnt/data/chwang/tmp/finale-calib/commit_calib24.json | 4fcebd235b520a1715d0db8250c149eabab9762fb007899012a21af898e097e5 | 30352
+# provenance (from commit messages and .agents records)
+ROWS: nolimit_rows.py @1a1f1fe6 (two-coast-tour-nolimit-solve) over the learned T 24 class solve, gpu4 Slurm 6106 (tools a6f5d19c, 2026-11-07 13:09-13:49, 157 steps); 779 rows, 434 passed; file mtime 2026-11-07 13:52.
+T24_DIR: output of the same gpu4 job 6106 (gpu4 /work/chwang/bpc-coast/out/two_coast/t24, copied here); attempts/t24-class-solve.md; no file newer than a42d0112 (13:58).
+VIEW: tourlate4-screen-64 out/all64 symlink view (tourlate4-ext32.md). parent/: 32 -> coast-eob-shoot-rec out/tourscreen/parent (tour screen, Slurm 11504 + 11546, 94a107c3), 32 -> tourlate4-screen-64 out/ext32/parent (Slurm 11624, art2, 8abdbe0b). ctrl_T24/: 32 -> coast-eob-shoot-rec out/v2screen/ctrl_T24 (v2 screen, Slurm 11083, 49ef8b34), 32 -> out/ext32/ctrl_T24 (Slurm 11624). Seeds 802408-802471. No file newer than a42d0112.
+TL4_JSON: tl4_report.py readout of all 64 parents, committed at 8abdbe0b (tourlate4-screen-64); worktree file = blob 0728aa4d at a42d0112 in both worktrees.
+HIND: .agents/hindsight_solutions_ls12.json (not in git, mtime 2026-11-07 12:50), env-verified hindsight tours of the coast-night hindsight-coast work (issue #23, hc_env_fly over B0 ls12 recordings, 169ffcb5 tools); 324 entries, 120 at T 24. The records do not name the exact script or job that wrote this file. Byte-identical to /mnt/data/chwang/tmp/two_coast/inputs/hindsight_solutions_ls12.json.
+PROXY_JSON: gate_proxy.py over the all64 view, committed at c151ec04 (tour-lock-own-coast-gate proxy-check); worktree file = blob 002b9c80 at a42d0112.
+SCRIPT: git show a42d0112:research/sc40/coast_night/calib.py (blob ebf66e8c, same as the tour-lock-own-coast-gate worktree copy).

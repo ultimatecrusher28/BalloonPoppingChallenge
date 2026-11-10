@@ -1,0 +1,158 @@
+# TASTI 2026 Balloon Popping Challenge finals config (scenario 40), team TASTI_ultimate_crusher: LM polish 10.
+# Run: uv run python BalloonPoppingGymEnv/evaluation/evaluate.py finals/sc40_finals_lm10.yaml
+# The agent and its settings are those of m2fb_sc40_finals_ls12_cut_wbt_deploy_calib_lm10_final_fix.yaml (sha256 3dcf15ac48e53f06...,
+# chwang-whole-burn-tour-force-lock/review-fixes@870461b4) without its four keys that have no effect in this code:
+# wall_budget_s (.inf; the agent has no time budget and never reads the clock) and tour_deploy leaf, rank_value,
+# stop_first and seq_depth (the deepened search of the tour decision fed only a record the agent does not read; removed
+# with its code). finals/README.md lists every setting's source.
+scenario_number: 40
+render_mode: null
+agent_module_path: ./BalloonPoppingGymEnv/agents/planner_agent.py
+agent_class_name: PlannerAgent
+agent_name: 'Finale Agent'
+agent_kwargs:
+  sim_burnout_cut: true
+  sim_terms_t: 24.0
+  replan_dt: 0.1
+  variants:
+  - - 2.0
+    - 0.8
+    - 0.0
+    - 0.0
+    - 0.0
+  - - 3.0
+    - 0.3
+    - 0.0
+    - 0.0
+    - 0.0
+  - - 4.0
+    - 0.3
+    - 0.0
+    - 0.0
+    - 0.0
+  - - 3.0
+    - 0.3
+    - 5.0
+    - 0.0
+    - 0.0
+  - - 3.0
+    - 0.3
+    - 0.0
+    - 1.5
+    - 0.0
+  - - 3.0
+    - 0.3
+    - 10.0
+    - 0.0
+    - 0.0
+  - - 3.0
+    - 0.3
+    - 20.0
+    - 0.0
+    - 0.0
+  launch_t: 44.0
+  horizon: 10.0
+  rocketnav: mekf
+  depth: 2
+  depth_gamma: 0.6
+  predictor: true
+  pred_sim_wind: true
+  pred_sim_wind_zlo: 30.0
+  vi_variants: true
+  vi_wr: 3.0
+  los_variants:
+  - - 2.0
+    - 0.8
+    - 0.0
+    - 1.0
+  - - 3.0
+    - 0.3
+    - 0.0
+    - 1.0
+  - - 4.0
+    - 0.3
+    - 0.0
+    - 1.0
+  - - 1.5
+    - 0.8
+    - 0.0
+    - 1.0
+  - - 2.5
+    - 0.8
+    - 0.0
+    - 1.0
+  - - 2.0
+    - 0.5
+    - 0.0
+    - 1.0
+  beam: 16
+  branch: 12
+  lam: 0.15
+  critic_path: critic_r1_deep.npz
+  critic_beta: 0.18
+  lam_coast: 0.0
+  lam_late: 0.1
+  lam_late_t: 16.0
+  loop_kwargs:
+    kp_rate: 10.0
+    ff: true
+  xrows:
+    variants:
+    - - 0
+      - 0.1
+      - 1.0
+    - - 0
+      - 0.3
+      - 1.0
+    k2: 2
+    rp: 0.6
+    aim: pmp
+    stick_fb: true
+    rate_cap: 1.5
+    lead: 0.15
+  reach_kwargs:
+    reach_beta: 0.5
+    reach_mode: soft
+    reach_k: 3
+    reach_tau0: 2.0
+    long_horizon: 14.0
+  late_search:
+    t: 12.0
+    depth: 3
+    beam: 32
+    branch: 16
+  tour_deploy:
+    t: 24.0
+    mode: classes
+    n_cls: 10
+    seeds: 4
+    gens: 40
+    pop: 128
+    sigma0: 0.15
+    sigma0b: null
+    es_dt: 0.02
+    polish: 10
+    pass_coast: true
+    near_t: 1.0
+    burn_max_near: 1.4
+    ntop: 300
+    wall_max: null
+    value: calib
+    order: nburn
+    sched: cand
+    seed_budget: 36
+    parallel: true
+    workers: 12
+    pin_cores: true
+    rank_lazy: true
+    queue: true
+    retry_t:
+    - 26.0
+  shoot_reshoot_late:
+  - 4.0
+  - 0.1
+  - 0.05
+  - 8
+team_name: TASTI_ultimate_crusher
+team_secret: null
+leaderboard_submission: false

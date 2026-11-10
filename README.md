@@ -1,3 +1,9 @@
+# We got 2nd prize in the TASTI 2026 Finale!!!!
+
+This repository contains the control methods, algorithms, and RL model weights for the finale.
+
+Finale newsletter: https://www.tasa.org.tw/zh-TW/announcements/detail/9b9a86b5-3aa3-4af7-95b6-d4c13cf141b3
+
 # Balloon Popping Challenge: A 6-DoF Rocket GNC Simulation [Gymnasium](https://gymnasium.farama.org/) Environment
 
 <a target="_blank" href="https://colab.research.google.com/github/ARRC-Rocket/BalloonPoppingChallenge/blob/main/doc/examples/evaluate_scenario_colab.ipynb">
